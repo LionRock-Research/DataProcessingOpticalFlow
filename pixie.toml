@@ -1,0 +1,36 @@
+[project]
+authors = ["fecet <xiezej@gmail.com>"]
+channels = [
+  "nvidia/label/cuda-12.4.0",
+  "nvidia",
+  "pytorch",
+  "conda-forge",
+  "nodefaults",
+]
+description = "Add a short description here"
+name = "pixi-cuda"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+req = "uv pip install determined==0.32.1 -i https://mirrors.aliyun.com/pypi/simple/"
+
+[dependencies]
+cuda = "12.4.*"
+pytorch-cuda = { version="12.4.*", channel="pytorch"}
+cuda-driver-dev = "12.4.*"
+cudnn = { channel = "conda-forge" }
+pytorch = { version = "*", channel = "pytorch"}
+torchaudio = { version = "*", channel = "pytorch"}
+torchvision = { version = "*", channel = "pytorch"}
+libjpeg-turbo = { channel = "conda-forge" }
+python = "3.10.*"
+ffmpeg = { channel = "conda-forge" }
+opencv = ">=4.10.0,<5"
+matplotlib = ">=3.9.2,<4"
+tensorboard = ">=2.18.0,<3"
+scipy = ">=1.14.1,<2"
+tqdm = ">=4.67.0,<5"
+pandas = ">=2.2.3,<3"
+pyarrow = ">=18.1.0,<19"
+pip = ">=24.3.1,<25"
